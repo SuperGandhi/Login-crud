@@ -68,9 +68,12 @@ class UsuariosController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usuarios $usuarios)
+    public function edit($id)
     {
         //
+        $usuarios=Usuarios::findOrFail($id);
+
+        return view('usuario.edit', compact('usuarios'));
     }
 
     /**
@@ -80,9 +83,13 @@ class UsuariosController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usuarios $usuarios)
+    public function update(Request $request, $id)
     {
         //
+        $datosUsuarios = request()->except(['_token', '_method']);
+        
+        Usuarios::where('id', $id)->update($datosUsuarios);
+        return view('usuario.edit', compact('usuarios'));
     }
 
     /**
@@ -91,8 +98,10 @@ class UsuariosController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Usuarios $usuarios)
+    public function destroy($id)
     {
         //
+        usuarios::destroy($id);
+        return redirect('usuario');
     }
 }

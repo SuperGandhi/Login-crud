@@ -21,7 +21,17 @@ Show the list to users
             <td>{{$usuario->ApellidoPaterno}}</td>
             <td>{{$usuario->ApellidoMaterno}}</td>
             <td>{{$usuario->Correo}}</td>
-            <td>Editar - Borrar</td>
+            <td>
+            <a href="{{url('/usuario/'.$usuario->id.'/edit')}}">
+                Editar
+            </a>
+            <form action="{{url('/usuario/'.$usuario->id)}}" method='post'>
+            @csrf
+            {{method_field('DELETE')}}  
+            <input type="submit" onclick=" return confirm('¿Desea Borrar?')"
+            value="Borrar">
+            </form>     
+            Borrar</td>
         </tr>
         @endforeach
     </tbody>
