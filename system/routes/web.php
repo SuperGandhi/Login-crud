@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UsuariosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/usuario', function () {
+//     return view('usuario.index');
+// });
+
+// Route::get('/usuario/create',[UsuariosController::class,'create']);
+
+// Whith this intruction we can access all the urls
+
+Route::resource('usuario',UsuariosController::class);

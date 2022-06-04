@@ -15,6 +15,7 @@ class UsuariosController extends Controller
     public function index()
     {
         //
+        return view('usuario.index');
     }
 
     /**
@@ -24,7 +25,8 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        //
+        // method to create a new user
+        return view('usuario.create');
     }
 
     /**
