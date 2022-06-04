@@ -23,6 +23,6 @@ Form to creation of a users
 <input type="file" name="Foto" id="Foto">
 <br>
 
-<input type="submit" name="Enviar" id="Enviar">
+<input type="submit" value="Guardar datos">
 <br>
 </form>
