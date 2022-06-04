@@ -1,6 +1,8 @@
 Form to creation of a users
 
-<form action="{{url()}}" method="post" enctype="multipart/form-data">
+<form action="{{url('/usuario')}}" method="post" enctype="multipart/form-data">
+// key to security
+@csrf
 <label for="Nombre">Nombre</label>
 <input type="text" name="Nombre" id="Nombre">
 <br>

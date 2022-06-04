@@ -38,6 +38,9 @@ class UsuariosController extends Controller
     public function store(Request $request)
     {
         //
+        $datosUsuario = request()->all();
+        return response()->json($datosUsuario);
+
     }
 
     /**
